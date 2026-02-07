@@ -89,3 +89,24 @@
     @apply bg-background text-foreground;
   }
 }
+
+.section-light {
+  --background: oklch(0.85 0.005 264.05) !important; 
+  --foreground: oklch(0.13 0.02 260.05) !important; 
+  --muted-foreground: oklch(0.35 0.04 258.05) !important;
+  --card: oklch(0.92 0.005 264.05) !important;
+  --card-foreground: oklch(0.13 0.02 260.05) !important;
+  --border: oklch(0.75 0.01 258.05) !important;
+  --input: oklch(0.75 0.01 258.05) !important;
+  --primary: oklch(0.13 0.02 260.05) !important;
+  --primary-foreground: oklch(0.95 0.002 247.85) !important;
+  --color-blue-400: oklch(0.45 0.15 260.05) !important; 
+  --color-blue-500: oklch(0.40 0.18 260.05) !important;
+
+  border-top: 1px solid oklch(0.95 0.005 264.05) !important;
+  border-bottom: 1px solid oklch(0.129 0.042 264.695 / 0.1) !important;
+}
+
+html {
+  scroll-behavior: smooth;
+}
