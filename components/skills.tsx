@@ -2,18 +2,27 @@ export default function Skills() {
   const skillCategories = [
     {
       title: "Languages",
-      skills: ["Java", "Python", "C", "TypeScript", "JavaScript", "SQL"],
+      skills: ["Java", "Python", "C", "Javascript", "TypeScript", "SQL","Lua"],
       className: "md:col-span-2",
     },
     {
-      title: "Frameworks",
-      skills: ["Next.js", "Node.js", "Gradle"],
+      title: "Tools",
+      skills: ["Git", "PostgreSQL", "Vercel", "Jupyter"],
       className: "md:col-span-1",
     },
     {
-      title: "Tools",
-      skills: ["Git", "PostgreSQL"],
-      className: "md:col-span-1",
+      title: "Frameworks & Libraries",
+      skills: [
+        "Next.js", 
+        "React", 
+        "Tailwind CSS", 
+        "Node.js", 
+        "Pandas", 
+        "Scikit-Learn", 
+        "Matplotlib", 
+        "NumPy"
+      ],
+      className: "md:col-span-3", 
     },
   ];
 
@@ -27,12 +36,12 @@ export default function Skills() {
         {skillCategories.map((category, index) => (
           <div 
             key={index} 
-            className={`p-8 rounded-3xl border border-border/50 bg-card/20 hover:border-blue-500/50 transition-colors ${category.className}`}
+            className={`p-8 rounded-3xl border border-border/50 bg-card/20 hover:border-blue-500/50 transition-colors flex flex-col ${category.className}`}
           >
             <h3 className="text-sm font-mono text-muted-foreground uppercase tracking-widest mb-6">
               {category.title}
             </h3>
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-3 mt-auto">
               {category.skills.map((skill) => (
                 <span 
                   key={skill} 

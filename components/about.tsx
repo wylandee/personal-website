@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function About() {
   return (
     <div className="min-h-[70vh] flex flex-col justify-center max-w-5xl mx-auto px-6 py-24">
@@ -8,31 +10,22 @@ export default function About() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
         <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean suscipit nec dui et lacinia. Praesent dignissim, ex at vulputate dictum, magna purus mattis purus, a sollicitudin risus turpis at leo. Sed consectetur diam quis tellus commodo elementum. Donec feugiat quis velit at pretium. Integer efficitur erat eget nisl mattis, sed vestibulum nulla luctus. Etiam ut imperdiet nisl. Suspendisse cursus feugiat rutrum. Praesent eu ante in nisl laoreet sagittis vitae non libero. Nulla vel tellus id turpis ullamcorper elementum. Quisque pellentesque nulla id pulvinar ornare. Nunc a ipsum sed nunc aliquam malesuada.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean suscipit nec dui et lacinia. Praesent dignissim, ex at vulputate dictum, magna purus mattis purus, a sollicitudin risus turpis at leo. Sed consectetur diam quis tellus commodo elementum. Donec feugiat quis velit at pretium. Integer efficitur erat eget nisl mattis, sed vestibulum nulla luctus. Etiam ut imperdiet nisl. Suspendisse cursus feugiat rutrum. Praesent eu ante in nisl laoreet sagittis vitae non libero. Nulla vel tellus id turpis ullamcorper elementum. Quisque pellentesque nulla id pulvinar ornare. Nunc a ipsum sed nunc aliquam malesuada.
+            Hello! I'm Dylan, a Year 2 Computer Science student currently studying at the National University of Singapore. I'm passionate in building all sorts of things, always looking for ways to automate my life and be more efficient! Currently, I'm learning and exploring more into Machine Learning and Exploratory Data Analysis! 
           </p>
         </div>
 
-        <div className="bg-card/30 p-8 rounded-2xl border border-border/50 backdrop-blur-sm">
-          <h3 className="text-sm font-mono text-muted-foreground uppercase mb-6 tracking-widest">
-            Lorem Ipsum
-          </h3>
-          <ul className="space-y-4 font-medium">
-            <li className="flex items-center gap-3">
-              <span className="w-1.5 h-1.5 bg-blue-500 rounded-full" />
-              Lorem Ipsum
-            </li>
-            <li className="flex items-center gap-3">
-              <span className="w-1.5 h-1.5 bg-blue-500 rounded-full" />
-              Lorem Ipsum
-            </li>
-            <li className="flex items-center gap-3">
-              <span className="w-1.5 h-1.5 bg-blue-500 rounded-full" />
-              Lorem Ipsum
-            </li>
-          </ul>
+        <div className="relative group">
+          <div className="relative aspect-square md:aspect-[4/5] w-full overflow-hidden rounded-2xl border border-border/50 bg-muted">
+            <Image
+              src="/me.JPG"
+              alt="Dylan Wee"
+              fill
+              className="object-cover transition-transform duration-500"
+              priority
+            />
+          </div>
+          <div className="absolute -z-10 top-4 -right-4 w-full h-full border border-blue-500/20 rounded-2xl md:block hidden" />
+          <div className="absolute -z-10 -bottom-4 -left-4 w-full h-full border border-border/40 rounded-2xl md:block hidden" />
         </div>
       </div>
     </div>

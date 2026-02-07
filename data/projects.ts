@@ -7,35 +7,36 @@ export interface Project {
   githubLink?: string;
   liveLink?: string;
   image?: string;
-  category: 'Software' | 'Machine Learning' | 'Lorem Ipsum';
+  category: 'Webapp' | 'Machine Learning' | 'Software';
 }
 
 export const projects: Project[] = [
   {
-    title: "Lorem Ipsum",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    techStack: ["Lorem Ipsum"],
-    githubLink: "Lorem Ipsum",
-    category: "Lorem Ipsum"
+    title: "Freepple",
+    description: "An escrow web app built on the XRP Ledger, allowing freelancers to safely accept jobs and clients to engage freelancers without worrying about being scammed. Built for NUS Fintech Summit 2026.",
+    techStack: ["React", "Node.js", "Javascript", "XRP Ledger"],
+    githubLink: "https://github.com/wylandee/nus-fintech-summit-2026.git",
+    category: "Webapp"
   },
   {
-    title: "Lorem Ipsum",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    techStack: ["Lorem Ipsum", "Lorem Ipsum", "Lorem Ipsum"],
-    githubLink: "Lorem Ipsum",
-    category: "Lorem Ipsum"
+    title: "GymeRHbot",
+    description: "Telegram bot to monitor the number of users in the Raffles Hall gym, notifies users when capacity is low and provides useful analytics.",
+    techStack: ["Python", "python-telegram-bot", "Matplotlib", "SQL"],
+    githubLink: "https://github.com/wylandee/gymeRHbot.git",
+    category: "Software"
   },
   {
-    title: "Lorem Ipsum",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    techStack: ["Lorem Ipsum", "Lorem Ipsum", "Lorem Ipsum", "Lorem Ipsum"],
-    category: "Lorem Ipsum"
+    title: "Exploring Machine Learning",
+    description: "A bunch of random traditional machine learning projects. Using linear regression, logistic regression, decision trees and random forests to analyse different datasets from Kaggle.",
+    techStack: ["Python", "sklearn", "Pandas", "Numpy", "Matplotlib", "Seaborn"],
+    githubLink: "https://github.com/wylandee/credit-risk-deafult-random-forest.git",
+    category: "Machine Learning"
   },
   {
-    title: "Lorem Ipsum",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    techStack: ["Lorem Ipsum", "Lorem Ipsum"],
-    githubLink: "Lorem Ipsum",
-    category: "Lorem Ipsum"
+    title: "Help Me Focus",
+    description: "Fun little Chrome extension to help low attention-span individuals focus better by playing a gamplay video on the side.",
+    techStack: ["Javascript", "Chrome Extension"],
+    githubLink: "https://github.com/wylandee/help-me-focus.git",
+    category: "Software"
   }
 ];

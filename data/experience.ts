@@ -8,23 +8,17 @@ export interface ExperienceItem {
 
 export const experiences: ExperienceItem[] = [
   {
-    role: "Lorem Ipsum",
-    company: "Lorem Ipsum",
-    period: "Lorem Ipsum",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean suscipit nec dui et lacinia. Praesent dignissim, ex at vulputate dictum, magna purus mattis purus, a sollicitudin risus turpis at leo. Sed consectetur diam quis tellus commodo elementum. Donec feugiat quis velit at pretium. Integer efficitur erat eget nisl mattis, sed vestibulum nulla luctus. Etiam ut imperdiet nisl. Suspendisse cursus feugiat rutrum. Praesent eu ante in nisl laoreet sagittis vitae non libero. Nulla vel tellus id turpis ullamcorper elementum. Quisque pellentesque nulla id pulvinar ornare. Nunc a ipsum sed nunc aliquam malesuada.",
-    skills: ["Lorem Ipsum", "Lorem Ipsum", "Lorem Ipsum", "Lorem Ipsum"]
+    role: "Software Engineer Intern",
+    company: "Defence Science and Technology Agency",
+    period: "March 2024 - June 2024",
+    description: "Developed a video generation tool using Python and OpenAI API which edits news report videos into bite-sized summaries for use in internal applications. Also worked on developing quests and resource management systems for a metaverse game on Roblox Studio.",
+    skills: ["Python", "OpenAI API", "Lua", "Roblox Studio"]
   },
   {
-    role: "Lorem Ipsum",
-    company: "Lorem Ipsum",
-    period: "Lorem Ipsum",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean suscipit nec dui et lacinia. Praesent dignissim, ex at vulputate dictum, magna purus mattis purus, a sollicitudin risus turpis at leo. Sed consectetur diam quis tellus commodo elementum. Donec feugiat quis velit at pretium. Integer efficitur erat eget nisl mattis, sed vestibulum nulla luctus. Etiam ut imperdiet nisl. Suspendisse cursus feugiat rutrum. Praesent eu ante in nisl laoreet sagittis vitae non libero. Nulla vel tellus id turpis ullamcorper elementum. Quisque pellentesque nulla id pulvinar ornare. Nunc a ipsum sed nunc aliquam malesuada.",
+    role: "Data Analyst Intern",
+    company: "Ministry of Health",
+    period: "January 2022 - March 2022",
+    description: "Ran and troubleshot daily Python and R scripts to process raw Covid-19 vaccination data. Used Microsoft Word, Powerpoint and Tableau for data visualisation to be used to generate daily vaccination reports.",
+    skills: ["Python", "R", "Tableau"]
   },
-  {
-    role: "Lorem Ipsum",
-    company: "Lorem Ipsum",
-    period: "Lorem Ipsum",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean suscipit nec dui et lacinia. Praesent dignissim, ex at vulputate dictum, magna purus mattis purus, a sollicitudin risus turpis at leo. Sed consectetur diam quis tellus commodo elementum. Donec feugiat quis velit at pretium. Integer efficitur erat eget nisl mattis, sed vestibulum nulla luctus. Etiam ut imperdiet nisl. Suspendisse cursus feugiat rutrum. Praesent eu ante in nisl laoreet sagittis vitae non libero. Nulla vel tellus id turpis ullamcorper elementum. Quisque pellentesque nulla id pulvinar ornare. Nunc a ipsum sed nunc aliquam malesuada.",
-    skills: ["Lorem Ipsum", "Lorem Ipsum", "Lorem Ipsum"]
-  }
 ];
