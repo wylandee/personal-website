@@ -18,8 +18,8 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 flex justify-center p-6">
-      <div className="flex items-center gap-6 px-6 py-3 rounded-full border border-border/40 bg-background/60 backdrop-blur-xl shadow-2xl">
+    <nav className="fixed bottom-8 left-0 w-full z-50 flex justify-center pointer-events-none">
+      <div className="flex items-center gap-6 px-8 py-3 rounded-2xl border border-border/40 bg-background/80 backdrop-blur-xl shadow-2xl pointer-events-auto animate-in slide-in-from-bottom-10 duration-700 fade-in">
         <a 
           href="#home" 
           onClick={(e) => handleScroll(e, "#home")}

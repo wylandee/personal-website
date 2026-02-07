@@ -1,9 +1,9 @@
-import Navbar from "@/components/navbar.tsx";
-import Landing from "@/components/landing.tsx";
-import About from "@/components/about.tsx";
-import Experience from "@/components/experience.tsx";
-import Projects from "@/components/projects.tsx";
-import Skills from "@/components/skills.tsx";
+import Navbar from "@/components/navbar";
+import Landing from "@/components/landing";
+import About from "@/components/about";
+import Experience from "@/components/experience";
+import Projects from "@/components/projects";
+import Skills from "@/components/skills";
 
 export default function Home() {
   return (
