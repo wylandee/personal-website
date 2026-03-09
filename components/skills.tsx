@@ -29,8 +29,8 @@ export default function Skills() {
   return (
     <section className="min-h-screen w-full pt-32 md:pt-40 pb-24">
       <div className="max-w-5xl mx-auto px-6 w-full">    
-          <h2 className="text-4xl font-bold tracking-tighter mb-16 uppercase text-blue-500">
-            / Skills
+          <h2 className="text-4xl font-serif tracking-tighter mb-16 uppercase text-blue-500">
+            Skills
           </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">

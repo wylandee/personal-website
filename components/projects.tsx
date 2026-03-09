@@ -22,14 +22,10 @@ export default function Projects() {
   return (
     <section className="min-h-screen w-full pt-32 md:pt-40 pb-24 overflow-hidden">
       
-      {/* HEADER CONTAINER */}
       <div className="max-w-5xl mx-auto px-6 w-full mb-12">
-        <div className="flex items-center gap-4">
-          <div className="w-12 h-[2px] bg-blue-500" />
-          <h2 className="text-sm font-bold tracking-widest uppercase text-blue-500">
-            / Projects
-          </h2>
-        </div>
+        <h2 className="text-5xl md:text-6xl font-serif tracking-tighter text-blue-500">
+          Projects
+        </h2>
       </div>
 
       {/* CAROUSEL CONTAINER */}

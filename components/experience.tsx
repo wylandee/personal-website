@@ -4,8 +4,8 @@ export default function Experience() {
   return (
     <section className="min-h-screen w-full pt-32 md:pt-40 pb-24">
       <div className="max-w-5xl mx-auto px-6 w-full">
-        <h2 className="text-4xl font-bold tracking-tighter mb-16 uppercase text-blue-500">
-          / Experience
+        <h2 className="text-5xl md:text-6xl font-serif tracking-tighter mb-16 text-blue-500">
+          Experience
         </h2>
 
         <div className="space-y-12">
@@ -15,7 +15,7 @@ export default function Experience() {
               
               <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-2">
                 <div>
-                  <h3 className="text-2xl font-bold text-foreground">{exp.role}</h3>
+                  <h3 className="text-2xl font-serif text-foreground">{exp.role}</h3>
                   <p className="text-lg font-medium text-muted-foreground">{exp.company}</p>
                 </div>
                 <span className="text-sm font-mono text-muted-foreground/60 uppercase tracking-widest pt-1">

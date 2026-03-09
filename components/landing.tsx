@@ -1,8 +1,9 @@
 export default function Landing() {
     return (
-        <section className="min-h-screen flex flex-col items-center justify-center bg-background text-foreground px-6">
+        <section className="min-h-screen flex flex-col items-center justify-center bg-background text-foreground px-6" id="landing">
             <div className="max-w-4xl text-center space-y-6">
-                <h1 className="text-7xl md:text-9xl font-extrabold tracking-tighter animate-in fade-in slide-in-from-bottom-4 duration-1000">
+                
+                <h1 className="text-7xl md:text-9xl font-serif tracking-tighter animate-in fade-in slide-in-from-bottom-4 duration-1000">
                     Dylan Wee
                 </h1>
 

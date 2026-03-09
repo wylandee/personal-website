@@ -19,13 +19,16 @@ export default function Navbar() {
 
   return (
     <nav className="fixed bottom-8 left-0 w-full z-50 flex justify-center pointer-events-none">
-      <div className="flex items-center gap-6 px-8 py-3 rounded-2xl border border-border/40 bg-background/80 backdrop-blur-xl shadow-2xl pointer-events-auto animate-in slide-in-from-bottom-10 duration-700 fade-in">
+      {/* Softened the border and added more padding for a premium glass look */}
+      <div className="flex items-center gap-6 px-8 py-4 rounded-full border border-border/30 bg-background/70 backdrop-blur-xl shadow-2xl pointer-events-auto animate-in slide-in-from-bottom-10 duration-700 fade-in">
+        
         <a 
           href="#landing" 
           onClick={(e) => handleScroll(e, "#landing")}
-          className="text-sm font-bold tracking-tighter hover:text-blue-500 transition-colors mr-4"
+          // Changed to serif, slightly larger, and added italic
+          className="text-xl font-serif hover:text-blue-500 transition-colors mr-2"
         >
-          HOME
+          Dylan
         </a>
         
         <div className="flex gap-6 items-center border-l border-border/50 pl-6">
