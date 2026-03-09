@@ -2,6 +2,7 @@
 
 import { useCallback } from "react";
 import Image from "next/image";
+import { motion } from "framer-motion"; // Import motion
 import useEmblaCarousel from "embla-carousel-react";
 import { projects } from "@/data/projects";
 
@@ -19,17 +20,41 @@ export default function Projects() {
     if (emblaApi) emblaApi.scrollNext();
   }, [emblaApi]);
 
+  // Unified animation variants for a slow, premium feel
+  const fadeInVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      transition: { duration: 1.5, ease: [0.22, 1, 0.36, 1] } 
+    }
+  };
+
   return (
-    <section className="min-h-screen w-full pt-32 md:pt-40 pb-24 overflow-hidden">
+    <section className="min-h-screen w-full pt-32 md:pt-40 pb-24 overflow-hidden" id="projects">
       
-      <div className="max-w-5xl mx-auto px-6 w-full mb-12">
+      {/* ANIMATED HEADER */}
+      <motion.div 
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={fadeInVariants}
+        className="max-w-5xl mx-auto px-6 w-full mb-12"
+      >
         <h2 className="text-5xl md:text-6xl font-serif tracking-tighter text-blue-500">
           Projects
         </h2>
-      </div>
+      </motion.div>
 
-      {/* CAROUSEL CONTAINER */}
-      <div className="relative w-full group/carousel">
+      {/* ANIMATED CAROUSEL CONTAINER */}
+      <motion.div 
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={fadeInVariants}
+        transition={{ delay: 0.3 }} // Slight delay after the header
+        className="relative w-full group/carousel"
+      >
         
         <button 
           onClick={scrollPrev}
@@ -40,15 +65,12 @@ export default function Projects() {
         </button>
 
         <div className="overflow-hidden w-full cursor-grab active:cursor-grabbing" ref={emblaRef}>
-          
           <div className="flex -ml-6 py-8">
-            
             {projects.map((project, index) => (
               <div 
                 key={index} 
                 className="flex-[0_0_85vw] md:flex-[0_0_28rem] lg:flex-[0_0_32rem] min-w-0 pl-6"
               >
-                {/* Added 'group' class here to trigger the image hover effect */}
                 <div className="group h-full relative bg-card/20 border border-border/50 rounded-3xl p-6 md:p-8 hover:bg-card/40 transition-all duration-300 flex flex-col justify-between min-h-[320px]">
                   <div>
                     <div className="flex justify-between items-start mb-6">
@@ -66,14 +88,14 @@ export default function Projects() {
                       {project.title}
                     </h3>
 
-                    {/* NEW IMAGE WRAPPER */}
                     {project.image && (
                       <div className="relative w-full aspect-video rounded-xl overflow-hidden mb-6 border border-border/50 bg-muted">
                         <Image
                           src={project.image}
                           alt={project.title}
                           fill
-                          className="object-cover transition-transform duration-700 group-hover:scale-105"
+                          className="object-cover transition-transform duration-[1200ms] group-hover:scale-105"
+                          sizes="(max-w-768px) 85vw, 32rem"
                         />
                       </div>
                     )}
@@ -103,11 +125,16 @@ export default function Projects() {
         >
           →
         </button>
-      </div>
+      </motion.div>
       
-      <div className="text-center md:hidden text-xs text-muted-foreground font-mono uppercase tracking-widest mt-4">
+      <motion.div 
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ delay: 1, duration: 1 }}
+        className="text-center md:hidden text-xs text-muted-foreground font-mono uppercase tracking-widest mt-4"
+      >
         ← Swipe to view more →
-      </div>
+      </motion.div>
 
     </section>
   );

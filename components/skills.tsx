@@ -1,3 +1,7 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 export default function Skills() {
   const skillCategories = [
     {
@@ -26,18 +30,58 @@ export default function Skills() {
     },
   ];
 
-  return (
-    <section className="min-h-screen w-full pt-32 md:pt-40 pb-24">
-      <div className="max-w-5xl mx-auto px-6 w-full">    
-          <h2 className="text-4xl font-serif tracking-tighter mb-16 uppercase text-blue-500">
-            Skills
-          </h2>
+  // 1. Container variants for staggered card entry
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3, // Distinct gap between each category appearing
+        delayChildren: 0.2,
+      },
+    },
+  };
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+  // 2. Item variants for each skill card
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1.5, // Matches the "slow" cinematic duration of previous sections
+        ease: [0.22, 1, 0.36, 1],
+      },
+    },
+  };
+
+  return (
+    <section className="min-h-screen w-full pt-32 md:pt-40 pb-24" id="skills">
+      <div className="max-w-5xl mx-auto px-6 w-full">    
+        {/* Unified animated header */}
+        <motion.h2 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 1.2 }}
+          className="text-5xl md:text-6xl font-serif tracking-tighter mb-16 text-blue-500"
+        >
+          Skills
+        </motion.h2>
+
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="grid grid-cols-1 md:grid-cols-3 gap-4"
+        >
           {skillCategories.map((category, index) => (
-            <div 
+            <motion.div 
               key={index} 
-              className={`p-8 rounded-3xl border border-border/50 bg-card/20 hover:border-blue-500/50 transition-colors flex flex-col ${category.className}`}
+              variants={itemVariants}
+              whileHover={{ y: -5, borderColor: "rgba(59, 130, 246, 0.5)" }} // Subtle hover lift
+              className={`p-8 rounded-3xl border border-border/50 bg-card/20 transition-colors flex flex-col ${category.className}`}
             >
               <h3 className="text-sm font-mono text-muted-foreground uppercase tracking-widest mb-6">
                 {category.title}
@@ -52,9 +96,9 @@ export default function Skills() {
                   </span>
                 ))}
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

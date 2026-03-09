@@ -1,37 +1,99 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function About() {
+  // Variants for the text container
+  const containerVariants = {
+    hidden: { opacity: 0, x: -30 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        staggerChildren: 0.4, // Increased from 0.2 (twice as slow between blocks)
+        duration: 1.5,        // Increased from 0.8 (slower slide)
+        ease: [0.22, 1, 0.36, 1],
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 1.5, ease: [0.22, 1, 0.36, 1] } // Slower duration
+    },
+  };
+
+  const imageVariants = {
+    hidden: { opacity: 0, scale: 0.9, x: 40 },
+    visible: { 
+      opacity: 1, 
+      scale: 1, 
+      x: 0, 
+      transition: { 
+        duration: 2, // Very slow, majestic reveal
+        ease: [0.22, 1, 0.36, 1] 
+      } 
+    }
+  };
+
   return (
-    <section className="min-h-screen w-full pt-32 md:pt-40 pb-24">
-      <div className="max-w-5xl mx-auto px-6 w-full">       
-        <h2 className="text-5xl md:text-6xl font-serif tracking-tighter mb-16 text-blue-500">
+    <section className="min-h-screen w-full pt-32 md:pt-40 pb-24" id="about">
+      <div className="max-w-5xl mx-auto px-6 w-full">
+        {/* Animated Section Header */}
+        <motion.h2 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+          className="text-5xl md:text-6xl font-serif tracking-tighter mb-16 text-blue-500"
+        >
           About
-        </h2>
+        </motion.h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-          <div className="space-y-8">
+          {/* LEFT SIDE: TEXT CONTENT */}
+          <motion.div 
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            className="space-y-8"
+          >
+            <motion.h3 
+              variants={itemVariants}
+              className="text-5xl md:text-6xl font-serif tracking-tighter text-foreground"
+            >
+              Hello! I&apos;m Dylan.
+            </motion.h3>
             
-            {/* Bigger, bolder, and different greeting */}
-            <h3 className="text-5xl md:text-6xl font-serif tracking-tighter text-foreground">
-              Hello! I'm Dylan.
-            </h3>
-            
-            {/* Split paragraphs for better readability */}
-            <div className="text-lg text-muted-foreground leading-relaxed space-y-4">
+            <motion.div 
+              variants={itemVariants}
+              className="text-lg text-muted-foreground leading-relaxed space-y-4"
+            >
               <p>
-                I'm a Year 2 Computer Science student currently studying at the National University of Singapore. 
+                I&apos;m a Year 2 Computer Science student currently studying at the National University of Singapore.
               </p>
               <p>
-                I'm passionate about building all sorts of things, always looking for ways to automate my life and be more efficient. Currently, I'm learning and exploring more into Machine Learning and Exploratory Data Analysis!
+                I&apos;m passionate about building all sorts of things, always looking for ways to automate my life and be more efficient. Currently, I&apos;m learning and exploring more into Machine Learning and Exploratory Data Analysis!
               </p>
               <p>
-                I'm always happy to have a conversation. Let's connect!
+                I&apos;m always happy to have a conversation. Let&apos;s connect!
               </p>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
-          <div className="relative group">
-            {/* Added a subtle scale effect on hover to the image */}
+          {/* RIGHT SIDE: IMAGE WITH REVEAL EFFECT */}
+          <motion.div 
+            initial={{ opacity: 0, x: 30, scale: 0.95 }}
+            whileInView={{ opacity: 1, x: 0, scale: 1 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+            className="relative group"
+          >
             <div className="relative aspect-square md:aspect-[4/5] w-full overflow-hidden rounded-2xl border border-border/50 bg-muted z-10">
               <Image
                 src="/me.JPG"
@@ -42,10 +104,22 @@ export default function About() {
               />
             </div>
             
-            {/* Enhanced decorative borders that react to hover */}
-            <div className="absolute -z-0 top-6 -right-6 w-full h-full border-2 border-blue-500/20 rounded-2xl md:block hidden transition-transform duration-500 group-hover:translate-x-2 group-hover:-translate-y-2" />
-            <div className="absolute -z-0 -bottom-6 -left-6 w-full h-full border-2 border-border/40 rounded-2xl md:block hidden transition-transform duration-500 group-hover:-translate-x-2 group-hover:translate-y-2" />
-          </div>
+            {/* Animated Decorative Borders */}
+            <motion.div 
+              initial={{ opacity: 0, x: 0, y: 0 }}
+              whileInView={{ opacity: 1, x: 24, y: -24 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.5, duration: 1 }}
+              className="absolute -z-0 top-0 right-0 w-full h-full border-2 border-blue-500/20 rounded-2xl md:block hidden" 
+            />
+            <motion.div 
+              initial={{ opacity: 0, x: 0, y: 0 }}
+              whileInView={{ opacity: 1, x: -24, y: 24 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.7, duration: 1 }}
+              className="absolute -z-0 bottom-0 left-0 w-full h-full border-2 border-border/40 rounded-2xl md:block hidden" 
+            />
+          </motion.div>
         </div>
       </div>
     </section>
