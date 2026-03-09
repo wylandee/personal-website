@@ -12,6 +12,13 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    title: "Kratosk-AI",
+    description: "Fun little Chrome extension to help low attention-span individuals focus better by playing a gamplay video on the side.",
+    techStack: ["Javascript", "Chrome Extension"],
+    githubLink: "https://github.com/wylandee/help-me-focus.git",
+    category: "Software"
+  },
+  {
     title: "Freepple",
     description: "An escrow web app built on the XRP Ledger, allowing freelancers to safely accept jobs and clients to engage freelancers without worrying about being scammed. Built for NUS Fintech Summit 2026.",
     techStack: ["React", "Node.js", "Javascript", "XRP Ledger"],
