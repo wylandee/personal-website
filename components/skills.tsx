@@ -27,33 +27,35 @@ export default function Skills() {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col justify-center max-w-5xl mx-auto px-6 py-24">
-      <h2 className="text-4xl font-bold tracking-tighter mb-16 uppercase text-blue-500">
-        / Skills
-      </h2>
+    <section className="min-h-screen w-full pt-32 md:pt-40 pb-24">
+      <div className="max-w-5xl mx-auto px-6 w-full">    
+          <h2 className="text-4xl font-bold tracking-tighter mb-16 uppercase text-blue-500">
+            / Skills
+          </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {skillCategories.map((category, index) => (
-          <div 
-            key={index} 
-            className={`p-8 rounded-3xl border border-border/50 bg-card/20 hover:border-blue-500/50 transition-colors flex flex-col ${category.className}`}
-          >
-            <h3 className="text-sm font-mono text-muted-foreground uppercase tracking-widest mb-6">
-              {category.title}
-            </h3>
-            <div className="flex flex-wrap gap-3 mt-auto">
-              {category.skills.map((skill) => (
-                <span 
-                  key={skill} 
-                  className="px-4 py-2 rounded-full bg-secondary/30 text-foreground text-sm font-medium border border-border/50"
-                >
-                  {skill}
-                </span>
-              ))}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {skillCategories.map((category, index) => (
+            <div 
+              key={index} 
+              className={`p-8 rounded-3xl border border-border/50 bg-card/20 hover:border-blue-500/50 transition-colors flex flex-col ${category.className}`}
+            >
+              <h3 className="text-sm font-mono text-muted-foreground uppercase tracking-widest mb-6">
+                {category.title}
+              </h3>
+              <div className="flex flex-wrap gap-3 mt-auto">
+                {category.skills.map((skill) => (
+                  <span 
+                    key={skill} 
+                    className="px-4 py-2 rounded-full bg-secondary/30 text-foreground text-sm font-medium border border-border/50"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
