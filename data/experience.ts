@@ -3,7 +3,7 @@ export interface ExperienceItem {
   company: string;
   period: string;
   description: string;
-  skills?: string[]; // Optional: show what you used during this time
+  skills?: string[];
 }
 
 export const experiences: ExperienceItem[] = [

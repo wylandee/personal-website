@@ -66,7 +66,6 @@ export default function Skills() {
           Skills
         </motion.h2>
 
-        {/* MASONRY WRAPPER: uses CSS columns to auto-arrange */}
         <motion.div 
           variants={containerVariants}
           initial="hidden"

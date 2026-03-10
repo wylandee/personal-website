@@ -2,7 +2,7 @@
 
 import { useCallback } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion"; // Import motion
+import { motion } from "framer-motion";
 import useEmblaCarousel from "embla-carousel-react";
 import { projects } from "@/data/projects";
 
@@ -20,7 +20,6 @@ export default function Projects() {
     if (emblaApi) emblaApi.scrollNext();
   }, [emblaApi]);
 
-  // Unified animation variants for a slow, premium feel
   const fadeInVariants = {
     hidden: { opacity: 0, y: 30 },
     visible: { 
@@ -33,7 +32,6 @@ export default function Projects() {
   return (
     <section className="min-h-screen w-full pt-32 md:pt-40 pb-24 overflow-hidden" id="projects">
       
-      {/* ANIMATED HEADER */}
       <motion.div 
         initial="hidden"
         whileInView="visible"
@@ -46,13 +44,12 @@ export default function Projects() {
         </h2>
       </motion.div>
 
-      {/* ANIMATED CAROUSEL CONTAINER */}
       <motion.div 
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={fadeInVariants}
-        transition={{ delay: 0.3 }} // Slight delay after the header
+        transition={{ delay: 0.3 }}
         className="relative w-full group/carousel"
       >
         
@@ -88,12 +85,10 @@ export default function Projects() {
                       {project.title}
                     </h3>
 
-                    {/* Updated Image Wrapper in components/projects.tsx */}
                     {project.image && (
                       <div className="relative w-full aspect-video rounded-xl overflow-hidden mb-6 border border-border/50 bg-muted">
                         {project.isMobile ? (
                           <>
-                            {/* MOBILE VIEW: Blurred Background + Contained Foreground */}
                             <Image
                               src={project.image}
                               alt=""
@@ -109,7 +104,6 @@ export default function Projects() {
                             />
                           </>
                         ) : (
-                          /* DEFAULT VIEW: Standard Object Cover */
                           <Image
                             src={project.image}
                             alt={project.title}

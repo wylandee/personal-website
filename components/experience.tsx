@@ -4,26 +4,24 @@ import { experiences } from "@/data/experience";
 import { motion } from "framer-motion";
 
 export default function Experience() {
-  // 1. Container variants to handle the stagger timing
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.4, // Slower stagger between each experience entry
+        staggerChildren: 0.4,
         delayChildren: 0.2,
       },
     },
   };
 
-  // 2. Item variants for each individual timeline entry
   const itemVariants = {
-    hidden: { opacity: 0, x: -20 }, // Slide in from the left to follow the timeline line
+    hidden: { opacity: 0, x: -20 },
     visible: {
       opacity: 1,
       x: 0,
       transition: {
-        duration: 1.5, // Slower, graceful reveal
+        duration: 1.5,
         ease: [0.22, 1, 0.36, 1],
       },
     },
@@ -32,7 +30,6 @@ export default function Experience() {
   return (
     <section className="min-h-screen w-full pt-32 md:pt-40 pb-24" id="experience">
       <div className="max-w-5xl mx-auto px-6 w-full">
-        {/* Animated Header */}
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -56,7 +53,6 @@ export default function Experience() {
               variants={itemVariants}
               className="relative pl-8 border-l border-border/50 group"
             >
-              {/* Timeline Dot with a subtle grow animation */}
               <motion.div 
                 initial={{ scale: 0 }}
                 whileInView={{ scale: 1 }}

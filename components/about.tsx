@@ -4,15 +4,14 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 export default function About() {
-  // Variants for the text container
   const containerVariants = {
     hidden: { opacity: 0, x: -30 },
     visible: {
       opacity: 1,
       x: 0,
       transition: {
-        staggerChildren: 0.4, // Increased from 0.2 (twice as slow between blocks)
-        duration: 1.5,        // Increased from 0.8 (slower slide)
+        staggerChildren: 0.4,
+        duration: 1.5,
         ease: [0.22, 1, 0.36, 1],
       },
     },
@@ -23,7 +22,7 @@ export default function About() {
     visible: { 
       opacity: 1, 
       y: 0,
-      transition: { duration: 1.5, ease: [0.22, 1, 0.36, 1] } // Slower duration
+      transition: { duration: 1.5, ease: [0.22, 1, 0.36, 1] }
     },
   };
 
@@ -34,7 +33,7 @@ export default function About() {
       scale: 1, 
       x: 0, 
       transition: { 
-        duration: 2, // Very slow, majestic reveal
+        duration: 2,
         ease: [0.22, 1, 0.36, 1] 
       } 
     }
@@ -43,7 +42,6 @@ export default function About() {
   return (
     <section className="min-h-screen w-full pt-32 md:pt-40 pb-24" id="about">
       <div className="max-w-5xl mx-auto px-6 w-full">
-        {/* Animated Section Header */}
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -55,7 +53,6 @@ export default function About() {
         </motion.h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-          {/* LEFT SIDE: TEXT CONTENT */}
           <motion.div 
             variants={containerVariants}
             initial="hidden"
@@ -86,7 +83,6 @@ export default function About() {
             </motion.div>
           </motion.div>
 
-          {/* RIGHT SIDE: IMAGE WITH REVEAL EFFECT */}
           <motion.div 
             initial={{ opacity: 0, x: 30, scale: 0.95 }}
             whileInView={{ opacity: 1, x: 0, scale: 1 }}
@@ -104,7 +100,6 @@ export default function About() {
               />
             </div>
             
-            {/* Animated Decorative Borders */}
             <motion.div 
               initial={{ opacity: 0, x: 0, y: 0 }}
               whileInView={{ opacity: 1, x: 24, y: -24 }}

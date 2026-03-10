@@ -7,7 +7,6 @@ export default function ScrollProgress() {
 
   useEffect(() => {
     const updateProgress = () => {
-      // Calculate how far the user has scrolled
       const scrolled = window.scrollY;
       const height = document.documentElement.scrollHeight - window.innerHeight;
       const percentage = (scrolled / height) * 100;
