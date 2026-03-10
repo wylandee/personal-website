@@ -1,10 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, Variants} from "framer-motion";
 
 export default function About() {
-  const containerVariants = {
+  const containerVariants : Variants = {
     hidden: { opacity: 0, x: -30 },
     visible: {
       opacity: 1,
@@ -17,7 +17,7 @@ export default function About() {
     },
   };
 
-  const itemVariants = {
+  const itemVariants : Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: { 
       opacity: 1, 
@@ -26,7 +26,7 @@ export default function About() {
     },
   };
 
-  const imageVariants = {
+  const imageVariants : Variants = {
     hidden: { opacity: 0, scale: 0.9, x: 40 },
     visible: { 
       opacity: 1, 

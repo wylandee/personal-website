@@ -1,14 +1,12 @@
 "use client";
 
-import { motion, useSpring, useMotionValue, useTransform } from "framer-motion";
+import { motion, useSpring, useMotionValue, useTransform, Variants } from "framer-motion";
 import { useEffect, useState } from "react";
 
 export default function Landing() {
-  // 1. MOUSE TRACKING FOR AMBIENT GLOW
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
-  // Smooth out the mouse movement using spring physics
   const springConfig = { damping: 25, stiffness: 150 };
   const smoothX = useSpring(mouseX, springConfig);
   const smoothY = useSpring(mouseY, springConfig);
@@ -22,10 +20,9 @@ export default function Landing() {
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, [mouseX, mouseY]);
 
-  // 2. CHARACTER-LEVEL STAGGER FOR YOUR NAME
   const nameChars = "Dylan Wee".split("");
 
-  const nameContainer = {
+  const nameContainer : Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -33,7 +30,7 @@ export default function Landing() {
     },
   };
 
-  const charItem = {
+  const charItem : Variants = {
     hidden: { opacity: 0, y: 50, rotateX: -90 },
     visible: {
       opacity: 1,
@@ -48,7 +45,6 @@ export default function Landing() {
       className="relative min-h-screen flex flex-col items-center justify-center bg-background text-foreground px-6 overflow-hidden" 
       id="landing"
     >
-      {/* INTERACTIVE SPOTLIGHT: This follows your mouse cursor */}
       <motion.div
         style={{
           left: smoothX,
@@ -59,7 +55,6 @@ export default function Landing() {
 
       <div className="relative z-10 max-w-4xl text-center space-y-8">
         
-        {/* CHARACTER ANIMATION: Each letter "flips" into view */}
         <motion.h1
           variants={nameContainer}
           initial="hidden"
@@ -113,7 +108,6 @@ export default function Landing() {
   );
 }
 
-// 3. MAGNETIC COMPONENT: Makes links "snap" toward the mouse
 function MagneticLink({ children, href, delay }: { children: React.ReactNode, href: string, delay: number }) {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
