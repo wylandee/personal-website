@@ -26,7 +26,7 @@ export default function Navbar() {
           href="#landing" 
           onClick={(e) => handleScroll(e, "#landing")}
           // Changed to serif, slightly larger, and added italic
-          className="text-xl font-serif hover:text-blue-500 transition-colors mr-2"
+          className="text-xl font-serif italic hover:text-blue-500 transition-colors mr-2"
         >
           Dylan
         </a>

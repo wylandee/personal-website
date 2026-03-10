@@ -86,6 +86,7 @@ export default function Landing() {
           {[
             { label: "LINKEDIN", href: "https://linkedin.com/in/dylan-wee-lee-hon" },
             { label: "GITHUB", href: "https://github.com/wylandee" },
+            { label: "RESUME", href: "/resume.pdf" },
             { label: "EMAIL", href: "mailto:mixedberries92@gmail.com" }
           ].map((link, i) => (
             <MagneticLink key={link.label} href={link.href} delay={1.8 + i * 0.1}>
@@ -136,6 +137,7 @@ function MagneticLink({ children, href, delay }: { children: React.ReactNode, hr
   return (
     <motion.a
       href={href}
+      target="_blank"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay }}

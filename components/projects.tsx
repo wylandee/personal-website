@@ -88,15 +88,36 @@ export default function Projects() {
                       {project.title}
                     </h3>
 
+                    {/* Updated Image Wrapper in components/projects.tsx */}
                     {project.image && (
                       <div className="relative w-full aspect-video rounded-xl overflow-hidden mb-6 border border-border/50 bg-muted">
-                        <Image
-                          src={project.image}
-                          alt={project.title}
-                          fill
-                          className="object-cover transition-transform duration-[1200ms] group-hover:scale-105"
-                          sizes="(max-w-768px) 85vw, 32rem"
-                        />
+                        {project.isMobile ? (
+                          <>
+                            {/* MOBILE VIEW: Blurred Background + Contained Foreground */}
+                            <Image
+                              src={project.image}
+                              alt=""
+                              fill
+                              className="object-cover blur-2xl opacity-20 scale-110"
+                            />
+                            <Image
+                              src={project.image}
+                              alt={project.title}
+                              fill
+                              className="object-contain p-2 transition-transform duration-[1200ms] group-hover:scale-105"
+                              sizes="(max-w-768px) 85vw, 32rem"
+                            />
+                          </>
+                        ) : (
+                          /* DEFAULT VIEW: Standard Object Cover */
+                          <Image
+                            src={project.image}
+                            alt={project.title}
+                            fill
+                            className="object-cover transition-transform duration-[1200ms] group-hover:scale-105"
+                            sizes="(max-w-768px) 85vw, 32rem"
+                          />
+                        )}
                       </div>
                     )}
                     

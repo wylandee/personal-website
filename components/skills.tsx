@@ -6,13 +6,11 @@ export default function Skills() {
   const skillCategories = [
     {
       title: "Languages",
-      skills: ["Java", "Python", "C", "Javascript", "TypeScript", "SQL","Lua"],
-      className: "md:col-span-2",
+      skills: ["Java", "Python", "C", "Javascript", "TypeScript", "SQL", "Lua"],
     },
     {
       title: "Tools",
-      skills: ["Git", "PostgreSQL", "Vercel", "Jupyter"],
-      className: "md:col-span-1",
+      skills: ["Git", "PostgreSQL", "Vercel", "Google Cloud", "Docker", "FFmpeg", "JUnit", "Gradle", "Github Actions"],
     },
     {
       title: "Frameworks & Libraries",
@@ -24,32 +22,32 @@ export default function Skills() {
         "Pandas", 
         "Scikit-Learn", 
         "Matplotlib", 
-        "NumPy"
+        "NumPy",
+        "VertexAI API",
+        "Streamlit",
+        "JavaFX"
       ],
-      className: "md:col-span-3", 
     },
   ];
 
-  // 1. Container variants for staggered card entry
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.3, // Distinct gap between each category appearing
+        staggerChildren: 0.3,
         delayChildren: 0.2,
       },
     },
   };
 
-  // 2. Item variants for each skill card
   const itemVariants = {
     hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 1.5, // Matches the "slow" cinematic duration of previous sections
+        duration: 1.5,
         ease: [0.22, 1, 0.36, 1],
       },
     },
@@ -58,7 +56,6 @@ export default function Skills() {
   return (
     <section className="min-h-screen w-full pt-32 md:pt-40 pb-24" id="skills">
       <div className="max-w-5xl mx-auto px-6 w-full">    
-        {/* Unified animated header */}
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -69,19 +66,20 @@ export default function Skills() {
           Skills
         </motion.h2>
 
+        {/* MASONRY WRAPPER: uses CSS columns to auto-arrange */}
         <motion.div 
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-4"
+          className="columns-1 md:columns-2 gap-4 space-y-4"
         >
           {skillCategories.map((category, index) => (
             <motion.div 
               key={index} 
               variants={itemVariants}
-              whileHover={{ y: -5, borderColor: "rgba(59, 130, 246, 0.5)" }} // Subtle hover lift
-              className={`p-8 rounded-3xl border border-border/50 bg-card/20 transition-colors flex flex-col ${category.className}`}
+              whileHover={{ y: -5, borderColor: "rgba(59, 130, 246, 0.5)" }}
+              className="break-inside-avoid p-8 rounded-3xl border border-border/50 bg-card/20 transition-colors flex flex-col"
             >
               <h3 className="text-sm font-mono text-muted-foreground uppercase tracking-widest mb-6">
                 {category.title}
